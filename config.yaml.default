@@ -1,0 +1,64 @@
+# Use the settings below to configure your monitors. The configuration settings
+# are separated by their functions. This package has 3 monitors:
+# 1.) System Monitor - used to monitor the condition of the PC (CPU & RAM usage).
+# 2.) Plotter Monitor - used to provide information about the plotter while it is
+#     running.
+# 3.) Miner Monitor - used to verify mining processes are running and provide information.
+#
+# Both monitors can be configured, then use the Windows task manger to schedule
+# each script to run as often as you'd like.
+
+notifications:
+  # Use these settings to determine how Discord notifications are delivered.
+  #
+  #        system_title: Currently not used
+  #      system_webhook: Used for Discord Notifications
+  #                      (Example: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx)
+  #       plotter_title: Currently not used
+  #     plotter_webhook: Can be the same or different from the system_webhook.
+  #                      (Example: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx)
+  #         miner_title: Currently not used
+  #  miner_webhook_true: Can be the same or different from the other webhooks.
+  #                      Example: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx
+  # miner_webhook_false: Can be the same or different from the other webhooks.
+  #                      Example: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx
+  system_webhook: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx
+  plotter_webhook: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx
+  miner_webhook_true: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx
+  miner_webhook_false: https://discordapp.com/api/webhooks/xxxxxxxxxxxxxxxxxxxxx
+
+
+system_parameters:
+  # Use these settings to configure how the system monitor runs.
+  #
+  # always_notify: If False - it will only notify the plot manager is not running or a threshhold is broken.
+  #      cpu_high: Will notify if it exceeds this threshhold (in percent)
+  #       cpu_low: Will notify if below this threshhold (in percent)
+  #      ram_high: Will notify if it exceeds this threshhold (in percent)
+  #       ram_low: Will notify if below this threshhold (in percent)
+  always_notify: True
+  cpu_high: 99
+  cpu_low: 55
+  ram_high: 62
+  ram_low: 40
+
+
+plotting_parameters:
+  # Use these settings to configure how the plotter monitor runs.
+  #
+  # pslog_path: The folder where the PSChiaPlotter logs are located - MUST BE SET.
+  #            Example: C:\Users\CurrentUser\.chia\mainnet\plotter
+  pslog_path: C:\Users\CurrentUser\.chia\mainnet\plotter
+
+
+miner_parameters:
+  # Use these settings to configure how the miner monitor runs.
+  #
+  # always_notify: If False - it will only notify if a mining process is not running.
+  #    hpool_path: The folder where your HPOOL Miner is located. - MUST BE SET.
+  #                Example: C:\Users\CurrentUser\Documents\HPool-Miner-chia-v1.4.1-0-windows
+  #     chia_path: The folder where your Chia.exe is located. - MUST BE SET.
+  #       Example: C:\Users\CurrentUser\AppData\Local\chia-blockchain\app-1.2.2\resources\app.asar.unpacked\daemon
+  always_notify: True
+  hpool_path: C:\Users\CurrentUser\Documents\HPool-Miner-chia-v1.4.1-0-windows
+  chia_path: C:\Users\CurrentUser\AppData\Local\chia-blockchain\app-1.2.2\resources\app.asar.unpacked\daemon
